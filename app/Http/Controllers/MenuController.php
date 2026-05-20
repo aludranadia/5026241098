@@ -12,7 +12,7 @@ class MenuController extends Controller
     }
 
     public function idx(){ //Method idx untuk menampilkan halaman index, begitu pula untuk halaman lainnya
-        return view('index'); //Penamaan 'index' harus konsisten dengan nama file blade, begitu pula untuk halaman lainnya
+        return view('indexlama'); //Penamaan 'index' harus konsisten dengan nama file blade, begitu pula untuk halaman lainnya
     }
 
     public function example(){
