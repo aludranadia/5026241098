@@ -6,6 +6,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\MinumanController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,3 +53,20 @@ Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+//routes CRUD
+Route::get('/pegawai', [PegawaiDBController::class, 'index']);
+Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah']);
+Route::post('/pegawai/store', [PegawaiDBController::class, 'store']);
+Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
+Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
+Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
+Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+Route::get('/minuman', [MinumanController::class, 'index']);
+Route::get('/minuman/tambah', [MinumanController::class, 'tambah']);
+Route::post('/minuman/store', [MinumanController::class, 'store']);
+Route::get('/minuman/edit/{id}', [MinumanController::class, 'edit']);
+Route::post('/minuman/update', [MinumanController::class, 'update']);
+Route::get('/minuman/hapus/{id}', [MinumanController::class, 'hapus']);
+Route::get('/minuman/cari', [MinumanController::class, 'cari']);
