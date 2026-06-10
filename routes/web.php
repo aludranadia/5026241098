@@ -7,6 +7,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MinumanController;
+use App\Http\Controllers\NilaikuliahController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -70,3 +71,7 @@ Route::get('/minuman/edit/{id}', [MinumanController::class, 'edit']);
 Route::post('/minuman/update', [MinumanController::class, 'update']);
 Route::get('/minuman/hapus/{id}', [MinumanController::class, 'hapus']);
 Route::get('/minuman/cari', [MinumanController::class, 'cari']);
+
+Route::get('/nilaikuliah', [NilaikuliahController::class, 'index']);
+Route::get('/nilaikuliah/tambah', [NilaikuliahController::class, 'tambah']);
+Route::post('/nilaikuliah/store', [NilaikuliahController::class, 'store']);
