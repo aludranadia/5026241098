@@ -36,7 +36,7 @@
                         <a class="nav-link" href="/keranjangbelanja">Soal D4: Laki-laki</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">EAS</a>
+                        <a class="nav-link" href="/eas">EAS</a> {{-- untuk menjawab route /eas --}}
                     </li>
                 </ul>
             </div>

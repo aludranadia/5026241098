@@ -10,6 +10,7 @@ use App\Http\Controllers\MinumanController;
 use App\Http\Controllers\NilaikuliahController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KeranjangBelanjaController;
+use App\Http\Controllers\EASController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -89,3 +90,8 @@ Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'index'])->n
 Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class, 'tambah'])->name('keranjangbelanja.tambah');
 Route::post('/keranjangbelanja/store', [KeranjangBelanjaController::class, 'store'])->name('keranjangbelanja.store');
 Route::get('/keranjangbelanja/hapus/{id}', [KeranjangBelanjaController::class, 'hapus'])->name('keranjangbelanja.hapus');
+
+// menerapkan alias agar memudahkan penulisan sebagaimana yang telah diajarkan pada video asinkronus sebelumnya
+Route::get('/eas', [EASController::class, 'index'])->name('eas.index');
+Route::get('/eas/tambah', [EASController::class, 'tambah'])->name('eas.tambah');
+Route::post('/eas/store', [EASController::class, 'store'])->name('eas.store');
