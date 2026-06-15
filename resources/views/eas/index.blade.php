@@ -18,28 +18,22 @@
             <th>Status</th>
         </tr>
         @foreach ($nilai_peserta as $np)
-        {{-- untuk logika warna baris sesuai kondisi lulus atau gagal, saya menggunakan perhitungan ratarata karena hasilnya sama --}}
+        {{-- izin memakai operator ratarata di awal nggih bapak karena akan digunakan berulang di dalam tabelnya (kolom ratarata dan kolom status) --}}
             @php
                 $ratarata = ($np->nilaiteori + $np->nilaipraktek) / 2;
-                $rowClass = '';
-                if ($ratarata < 75) {
-                    $rowClass = 'text-white table-danger'; // mohon maaf bapak, saya mencoba menggunakan text-white agar tulisannya berubah menjadi warna putih, tetapi entah kenapa di halaman web-nya tidak mau berubah
-                } elseif ($ratarata >= 75) {
-                    $rowClass = 'text-white table-success'; // begitu pula dengan text-white yang ini tidak dapat berfungsi sebagaimana mestinya
-                }
             @endphp
-            <tr class="{{ $rowClass }}"> {{-- memakai class rowClass agar menerapkan logika pewarnaan yang di atas --}}
+            <tr>
                 <td>{{ $np->ID }}</td>
                 <td>{{ $np->nopeserta }}</td>
                 <td>{{ $np->nilaiteori }}</td>
                 <td>{{ $np->nilaipraktek }}</td>
                 <td>{{ $ratarata }}</td>
                 <td>
-                    {{-- ini untuk menjawab pertanyaan konversi nilai rata-rata --}}
+                    {{-- ini untuk menjawab pertanyaan konversi nilai rata-rata serta penambahan warna dari lulus atau tidak lulus--}}
                     @if ($ratarata >= 75)
-                        Lulus
+                        <div style="background-color: green; color: white;">Lulus</div>
                     @else
-                        Gagal
+                        <div style="background-color: red; color: white;">Gagal</div>
                     @endif
                 </td>
             </tr>
